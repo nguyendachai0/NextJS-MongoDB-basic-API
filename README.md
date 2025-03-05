@@ -1,98 +1,100 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# NestJS Products API
 
 ## Description
+A comprehensive CRUD (Create, Read, Update, Delete) API for managing products built with NestJS and MongoDB. This project demonstrates a robust backend application with RESTful endpoints for product management.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Prerequisites
+- Node.js (v16 or later)
+- npm (v8 or later)
+- MongoDB (v5 or later)
 
-## Project setup
+## Installation
 
+### 1. Clone the Repository
 ```bash
-$ npm install
+git clone https://github.com/nguyendachai0/NextJS-MongoDB-basic-API.git
+cd NextJS-MongoDB-basic-API
 ```
 
-## Compile and run the project
-
+### 2. Install Dependencies
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install
 ```
 
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+### 3. Set Up Environment
+Create a `.env` file in the project root with the following content:
+```env
+MONGODB_URI=mongodb://localhost:27017/products-db
+PORT=3000
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+### 4. Running the Application
 ```bash
-$ npm install -g mau
-$ mau deploy
+# Development mode with hot reload
+npm run start:dev  
+
+# Production mode
+npm run start:prod  
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## API Endpoints
 
-## Resources
+### Products Endpoints
+- `GET /products`: Retrieve all products
+- `POST /products`: Create a new product
+- `GET /products/:id`: Retrieve a specific product by ID
+- `PUT /products/:id`: Update an existing product
+- `DELETE /products/:id`: Delete a product
 
-Check out a few resources that may come in handy when working with NestJS:
+### Example Request Body for Creating/Updating a Product
+```json
+{
+  "name": "Wireless Headphones",
+  "description": "High-quality noise-cancelling headphones",
+  "price": 199.99,
+  "stock": 50
+}
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## Testing
+```bash
+# Unit tests
+npm run test  
 
-## Support
+# End-to-end tests
+npm run test:e2e  
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Technologies Used
+- NestJS
+- MongoDB
+- Mongoose
+- TypeScript
 
-## Stay in touch
+## Project Structure
+```
+src/
+├── main.ts
+├── app.module.ts
+└── products/
+    ├── dto/
+    ├── schemas/
+    ├── products.controller.ts
+    ├── products.service.ts
+    └── products.module.ts
+```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## Contact
+**Nguyen Dac Hai**  
+Email: [haindfullstack@gmail.com](mailto:haindfullstack@gmail.com)  
+Project Link: [GitHub Repository](https://github.com/nguyendachai0/NextJS-MongoDB-basic-API)
